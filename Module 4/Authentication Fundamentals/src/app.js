@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use('/auth', authRoutes);
 app.use((error, req, res, next) => {
-  console.error(error.message);
+  console.error('Request failed');
   res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: 'Internal server error' } });
 });
 
